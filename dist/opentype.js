@@ -1,5 +1,5 @@
 /**
- * https://opentype.js.org v0.7.1 | (c) Frederik De Bleser and other contributors | MIT License | Uses tiny-inflate by Devon Govett
+ * @license https://opentype.js.org v0.7.2 | (c) Frederik De Bleser and other contributors | MIT License | Uses tiny-inflate by Devon Govett
  */
 
 (function (global, factory) {
@@ -10899,6 +10899,11 @@ Font.prototype.charToGlyph = function(c) {
     }
 
     return glyph;
+};
+
+Font.prototype.charToGlyphNull = function(c) {
+    var index = this.charToGlyphIndex(c);
+    return index > 0 ? this.glyphs.get(index) : null;
 };
 
 /**

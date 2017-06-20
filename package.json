@@ -29,6 +29,7 @@
     "watch": "rollup -c -w",
     "test": "mocha --require reify --compilers js:buble/register --recursive && jshint . && jscs .",
     "build": "rollup -c",
+    "build2": "rollup -c && copy dist\\opentype.js ..\\..\\build\\opentype.js",
     "minify": "uglifyjs ./dist/opentype.js > ./dist/opentype.min.js",
     "dist": "npm run test && npm run build && npm run minify"
   },

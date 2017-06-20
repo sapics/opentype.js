@@ -138,6 +138,11 @@ Font.prototype.charToGlyph = function(c) {
     return glyph;
 };
 
+Font.prototype.charToGlyphNull = function(c) {
+    var index = this.charToGlyphIndex(c);
+    return index > 0 ? this.glyphs.get(index) : null;
+};
+
 /**
  * Convert the given text to a list of Glyph objects.
  * Note that there is no strict one-to-one mapping between characters and
